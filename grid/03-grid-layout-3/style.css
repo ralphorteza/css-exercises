@@ -3,7 +3,29 @@
   padding: 0;
 }
 
+/* ### Self Check
+- The container element has two columns //
+- The container's second column is 4 times larger than the first column //
+- The container element has a gap of 4px //
+- The header element has two columns //
+- The header element contains another grid that has two columns //
+- The `ul` inside the menu element contains another grid //
+- The `ul` inside the nav element contains another grid //
+- The sidebar element has a gap of 50px //
+- The text elements in the sidebar are centered with grid //
+- The article element should set grid columns using `repeat` along with the `auto-fit` and `minmax` properties //
+- The article columns should have a minimum value of 250px and a maximum of 1fr unit //
+- The article element has a gap of 15px //
+- The card elements inside the article container have a height of 200px //
+- The header and footer span across both columns //
+- The sidebar only spans across the first column //
+- The nav and article elements only span across the second column //
+*/
 .container {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr 4fr;
+
   text-align: center;
 }
 
@@ -16,16 +38,26 @@
 }
 
 .header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  grid-column: 1 / -1;
   background-color: #393f4d;
 }
 
+
 .logo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.menu {
+.menu { 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .menu ul {
+  display: grid;
 }
 
 .menu ul,
@@ -34,6 +66,10 @@
 }
 
 .sidebar {
+  display: grid;
+  gap: 50px;
+
+  grid-column: 1 / 2;
   background-color: #FF7755;
 }
 
@@ -57,9 +93,11 @@
 
 .nav {
   background-color: #FF7755;
+  grid-column: 2 / 3;
 }
 
 .nav ul {
+  display: grid;
 }
 
 .nav ul li {
@@ -68,6 +106,11 @@
 }
 
 .article {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column: 2 / 3;
+
   background-color: #bccbde;
 }
 
@@ -82,6 +125,8 @@
   background-color: #FFFFFF;
   color: black;
   text-align: center;
+
+  height: 200px;
 }
 
 .card p {
@@ -102,4 +147,6 @@
 .footer p {
   font-size: 13px;
   font-weight: normal;  
+
+  grid-column: 1 / -1;
 }
