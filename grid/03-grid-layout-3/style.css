@@ -71,9 +71,13 @@
 .sidebar {
   display: grid;
   gap: 50px;
-
   grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  place-items: stretch stretch;
+  text-align: center;
+
   background-color: #FF7755;
+
 }
 
 .sidebar .photo {
@@ -88,10 +92,16 @@
 }
 
 .sidebar .side-content {
+
   background-color: white;
   color: black;
   font-size: 16px;
   font-weight: normal;
+
+/* 
+  align-self: stretch;
+  justify-self: stretch; */
+
 }
 
 .nav {
@@ -145,11 +155,10 @@
 
 .footer {
   background-color: #393f4d;
+  grid-column: 1 / -1;
 }
 
 .footer p {
   font-size: 13px;
   font-weight: normal;  
-
-  grid-column: 1 / -1;
 }
